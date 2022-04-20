@@ -1,7 +1,6 @@
 const db = require('./config/dbconfig');
 
 const todo = require('./services/todo');
-const dbUtil = require('./services/dbUtil');
 const login = require('./services/login');
 
 const express = require('express');

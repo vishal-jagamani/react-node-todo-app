@@ -1,5 +1,5 @@
 const Q = require('q');
-var bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 (function (login) {
 
     const dbUtil = require('./dbUtil');
@@ -7,7 +7,7 @@ var bcrypt = require('bcrypt');
     //login function
     login.getDetails = async (email, password) => {
         let deffered = await Q.defer();
-        const bcrypt = require('bcrypt');
+        const bcrypt = require('bcryptjs');
         console.log("Start of getting details");
         dbUtil.query("SELECT * FROM user WHERE email = ?", [email])
             .then((response) => {
@@ -38,7 +38,7 @@ var bcrypt = require('bcrypt');
     //register function
     login.register = async (name, email, password) => {
         let deffered = Q.defer();
-        const bcrypt = require('bcrypt');
+        const bcrypt = require('bcryptjs');
         var hashPassword = await bcrypt.hash(password, 10);
         console.log(hashPassword);
         console.log("Start of registration");
