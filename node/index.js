@@ -2,6 +2,7 @@ const db = require('./config/dbconfig');
 
 const todo = require('./services/todo');
 const login = require('./services/login');
+const PORT = process.env.PORT || 4000;
 
 const express = require('express');
 const app = express();
@@ -75,7 +76,7 @@ app.delete("/deleteTask", (req, res) => {
 });
 
 //listening to port
-app.listen(4000, () => {
+app.listen(PORT, () => {
     console.log("Server running on port 4000");
 });
 
